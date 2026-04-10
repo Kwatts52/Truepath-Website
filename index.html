@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>True Path Electrical Services | Umatilla & Central Florida Electrician</title>
+  <meta name="description" content="Licensed electrician serving Umatilla, Lake County, and Central Florida. Residential, commercial, and industrial electrical services. 24/7 emergency service available." />
+
+  <meta name="theme-color" content="#0b0f14" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#9BCB3C;
+      --ink:#0b0f14;
+      --muted:#5f6b7a;
+      --bg:#ffffff;
+      --alt:#f5f7fb;
+      --line:#e5e9ef;
+
+      --shadow: 0 14px 40px rgba(0,0,0,.10);
+      --shadowHover: 0 18px 60px rgba(0,0,0,.18);
+      --radius:18px;
+
+      --headerBg: rgba(255,255,255,.90);
+      --tileBg:#ffffff;
+      --tileBorder: rgba(11,15,20,.10);
+
+      --btnText:#0b0f14;
+
+      --logoHDesktop:76px;
+      --logoHMobile:54px;
+    }
+
+    html[data-theme="dark"]{
+      --bg:#070a0d;
+      --alt:#070a0d;
+      --ink:#f2f6fb;
+      --muted:#a8b3c2;
+      --line: rgba(255,255,255,.08);
+
+      --headerBg: rgba(11,15,20,.82);
+      --tileBg: rgba(255,255,255,.03);
+      --tileBorder: rgba(255,255,255,.10);
+
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --shadowHover: 0 20px 70px rgba(0,0,0,.55);
+      --btnText:#0b0f14;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.5;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:0 18px}
+
+    .skip{
+      position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+    }
+    .skip:focus{
+      left:18px;top:18px;width:auto;height:auto;background:#fff;padding:10px 12px;border:1px solid var(--line);
+      border-radius:10px;z-index:999;color:#111;
+    }
+
+    header.header{
+      position:sticky;top:0;z-index:50;
+      background:var(--headerBg);
+      backdrop-filter:saturate(180%) blur(14px);
+      border-bottom:1px solid var(--line);
+      box-shadow: 0 2px 20px rgba(0,0,0,.06);
+    }
+
+    .header__inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 0;
+      gap:14px;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px;min-width:220px}
+    .brand__logo{
+      height:var(--logoHDesktop);
+      width:auto;
+      display:block;
+      object-fit:contain;
+    }
+
+    .nav{display:flex;gap:18px;align-items:center}
+    .nav a{font-weight:800;color:var(--ink);opacity:.95}
+    .nav a:hover{opacity:1}
+
+    .pill{
+      background:var(--accent);
+      color:var(--btnText);
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:900;
+      border:1px solid transparent;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .pill:hover{
+      background:#7fb32f;
+      border-color:#7fb32f;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,.18);
+      cursor:pointer;
+    }
+
+    .themeBtn{
+      border:1px solid var(--line);
+      background:transparent;
+      color:var(--ink);
+      font-weight:900;
+      padding:10px 12px;
+      border-radius:12px;
+      cursor:pointer;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .themeBtn:hover{
+      transform: translateY(-2px);
+      border-color: rgba(155,203,60,.55);
+      background: rgba(155,203,60,.10);
+    }
+
+    .nav__toggle{
+      display:none;border:1px solid var(--line);
+      background:transparent;padding:10px;border-radius:12px;cursor:pointer;
+    }
+    .nav__toggle span{
+      display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;
+    }
+
+    .hero{
+      padding:56px 0 22px;
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(155,203,60,.18), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(155,203,60,.10), transparent 60%),
+        linear-gradient(180deg, rgba(245,247,251,1) 0%, rgba(238,244,234,1) 100%);
+    }
+    html[data-theme="dark"] .hero{
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(155,203,60,.16), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(155,203,60,.10), transparent 60%),
+        linear-gradient(180deg, rgba(7,10,13,1) 0%, rgba(9,12,16,1) 100%);
+    }
+
+    .hero__grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    .kicker{
+      display:inline-block;
+      font-weight:900;
+      color:var(--muted);
+      background:rgba(155,203,60,.12);
+      border:1px solid rgba(155,203,60,.30);
+      padding:8px 12px;
+      border-radius:999px;
+    }
+
+    h1{
+      font-size:46px;
+      line-height:1.08;
+      letter-spacing:-.02em;
+      margin:14px 0 12px;
+    }
+
+    .lead{
+      font-size:18px;
+      color:var(--muted);
+      max-width:60ch;
+    }
+
+    .hero__cta{display:flex;gap:12px;margin:18px 0 12px;flex-wrap:wrap}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      font-weight:900;
+      cursor:pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+      user-select:none;
+    }
+    .btn:active{transform: translateY(1px)}
+
+    .btn--primary{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:var(--btnText);
+    }
+    .btn--primary:hover{
+      background:#7fb32f;
+      border-color:#7fb32f;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,.18);
+    }
+
+    .btn--ghost{
+      background:transparent;
+      color:var(--ink);
+    }
+    .btn--ghost:hover{
+      background:rgba(155,203,60,.15);
+      border-color:rgba(155,203,60,.55);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,.12);
+    }
+
+    .trust{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+    .trust__item{display:flex;align-items:center;gap:10px;color:var(--muted);font-weight:800}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--accent)}
+
+    .heroCard{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+      background:var(--tileBg);
+      overflow:hidden;
+    }
+
+    /* No hero image yet: we show a clean placeholder instead of a broken image */
+    .heroPlaceholder{
+      width:100%;
+      height:240px;
+      border-radius:14px;
+      border:1px solid var(--tileBorder);
+      background:
+        radial-gradient(900px 380px at 30% 10%, rgba(155,203,60,.18), transparent 60%),
+        linear-gradient(135deg, rgba(11,15,20,.12), rgba(11,15,20,.03));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+      text-align:center;
+      color:var(--muted);
+      font-weight:800;
+    }
+
+    .card__rows{margin:14px 0 14px;display:flex;flex-direction:column;gap:10px}
+    .row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+    .row:last-child{border-bottom:0}
+    .label{color:var(--muted);font-weight:800}
+    .value{font-weight:900}
+
+    .btn--full{width:100%}
+
+    .section{padding:56px 0}
+    .section--alt{background:var(--alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .section__head{margin-bottom:18px}
+    .section__head h2{font-size:32px;margin:0 0 6px;letter-spacing:-.01em}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+
+    .tile{
+      border:1px solid var(--tileBorder);
+      border-radius:var(--radius);
+      padding:18px;
+      background:var(--tileBg);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+    }
+    .tile h3{margin:0 0 8px}
+    .tile p{margin:0;color:var(--muted);transition: color .18s ease}
+
+    /* Hover: green tile, black text, works in light and dark */
+    .tile:hover{
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-6px);
+      box-shadow: var(--shadowHover);
+      color: #0b0f14;
+      cursor:pointer;
+    }
+    .tile:hover h3{color:#0b0f14}
+    .tile:hover p{color:#0b0f14}
+
+    .section__bar{margin-top:18px}
+    .bar{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:14px;
+      border:1px solid var(--tileBorder);
+      background:var(--tileBg);
+      border-radius:var(--radius);
+      padding:16px;
+    }
+
+    .areas{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .areas__list{
+      border:1px solid var(--tileBorder);
+      border-radius:var(--radius);
+      padding:16px;
+      background:var(--tileBg);
+    }
+    .areas__list ul{
+      margin:0;padding-left:18px;
+      display:grid;grid-template-columns: 1fr 1fr;gap:6px 14px;
+    }
+    .areas__note{margin-top:10px;color:var(--muted);font-weight:800}
+
+    .map__box{
+      border:1px solid var(--tileBorder);
+      border-radius:var(--radius);
+      padding:16px;
+      background:var(--tileBg);
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:10px;
+    }
+    .map__title{margin:0;font-weight:900}
+
+    .about{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:start;
+    }
+    .badges{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .badge{
+      border:1px solid rgba(155,203,60,.40);
+      background:rgba(155,203,60,.12);
+      color:var(--ink);
+      padding:8px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:13px;
+    }
+
+    .panel{
+      border:1px solid var(--tileBorder);
+      border-radius:var(--radius);
+      background:var(--tileBg);
+      padding:16px;
+    }
+
+    .photoGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .workImg{
+      width:100%;
+      height:160px;
+      border-radius:14px;
+      object-fit:cover;
+      border:1px solid var(--tileBorder);
+      display:block;
+      background:
+        radial-gradient(700px 240px at 30% 10%, rgba(155,203,60,.18), transparent 60%),
+        linear-gradient(135deg, rgba(11,15,20,.12), rgba(11,15,20,.03));
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap:14px;
+    }
+
+    .contactLines{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+    .contactLine{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+    .contactLine:last-child{border-bottom:0}
+    .contactLine .left{color:var(--muted);font-weight:900}
+    .contactLine .right{font-weight:900}
+
+    .form label{display:block;font-weight:900;margin:10px 0 6px}
+    .form input, .form textarea, .form select{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 12px;
+      font:inherit;
+      outline:none;
+      background:transparent;
+      color:var(--ink);
+    }
+    .form input:focus, .form textarea:focus, .form select:focus{
+      border-color:rgba(155,203,60,.75);
+      box-shadow:0 0 0 4px rgba(155,203,60,.14);
+    }
+    .form__row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+
+    .footer{
+      padding:28px 0;
+      border-top:1px solid var(--line);
+      background:transparent;
+    }
+    .footer__grid{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    .footer__logo{height:40px;width:auto;display:block;margin-bottom:8px}
+    .fine{font-size:13px;color:var(--muted);font-weight:800}
+    .footer__bottom{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}
+
+    @media (max-width: 920px){
+      .hero__grid{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr 1fr}
+      .areas{grid-template-columns: 1fr}
+      .about{grid-template-columns: 1fr}
+      .contact{grid-template-columns: 1fr}
+      .brand{min-width: unset}
+    }
+
+    @media (max-width: 720px){
+      h1{font-size:34px}
+      .brand__logo{height:var(--logoHMobile)}
+      .header__inner{padding:10px 0}
+      .nav{display:none}
+      .nav__toggle{display:block}
+      .nav.is-open{
+        display:flex;
+        position:absolute;
+        left:18px; right:18px;
+        top:72px;
+        background:var(--headerBg);
+        border:1px solid var(--line);
+        border-radius:16px;
+        padding:12px;
+        flex-direction:column;
+        gap:12px;
+        box-shadow:var(--shadow);
+      }
+      .form__row{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr}
+      .areas__list ul{grid-template-columns: 1fr}
+      .bar{flex-direction:column;align-items:flex-start}
+      .hero{padding:40px 0 14px}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <img class="brand__logo" src="assets/logo.png" alt="True Path Electrical Services">
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#services">Services</a>
+        <a href="#area">Service Area</a>
+        <a href="#why">Why Us</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a class="pill" href="tel:+13528884468">Call Now</a>
+        <button class="themeBtn" id="themeBtn" type="button">Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <span class="kicker">Umatilla, FL • Serving Central Florida</span>
+          <h1>Licensed electrician serving Umatilla & Central Florida.</h1>
+          <p class="lead">Residential, commercial, and industrial electrical work. Fast response. Code-compliant installs. 24/7 emergency availability.</p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="tel:+13528884468">Call 24/7 • (352) 888-4468</a>
+            <a class="btn btn--ghost" href="#contact">Request a Quote</a>
+          </div>
+
+          <div class="trust">
+            <div class="trust__item"><span class="dot"></span> Licensed & Insured (EC13015924)</div>
+            <div class="trust__item"><span class="dot"></span> Owner operated, clear communication</div>
+            <div class="trust__item"><span class="dot"></span> Emergency service available</div>
+          </div>
+        </div>
+
+        <div class="heroCard">
+          <h2 style="margin:0 0 8px">Quick Contact</h2>
+          <div style="color:var(--muted);font-weight:800">Call or email and we’ll get back to you.</div>
+
+          <div class="card__rows">
+            <div class="row"><div class="label">Phone</div><div class="value">(352) 888-4468</div></div>
+            <div class="row"><div class="label">Email</div><div class="value">cody.watters@truepathfl.com</div></div>
+            <div class="row"><div class="label">License</div><div class="value">EC13015924</div></div>
+            <div class="row"><div class="label">Hours</div><div class="value">24/7 Emergency</div></div>
+          </div>
+
+          <div class="heroPlaceholder">
+            Hero image goes here later.<br>
+            For now this stays clean and not broken.
+          </div>
+
+          <div style="margin-top:12px">
+            <a class="btn btn--primary btn--full" href="tel:+13528884468">Call Now</a>
+          </div>
+          <div class="fine" style="margin-top:10px">
+            Based in Umatilla. Serving Central Florida and surrounding counties.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="section__head">
+          <h2>Services</h2>
+          <p class="lead">Built for homeowners, businesses, and industrial facilities across Central Florida.</p>
+        </div>
+
+        <div class="grid">
+          <div class="tile">
+            <h3>Service & Troubleshooting</h3>
+            <p>Fast diagnosis and safe repairs for outages, faults, breakers, and intermittent issues.</p>
+          </div>
+          <div class="tile">
+            <h3>Panels & Upgrades</h3>
+            <p>Panel replacements, surge protection, load calculations, and code-compliant upgrades.</p>
+          </div>
+          <div class="tile">
+            <h3>Lighting</h3>
+            <p>Interior, exterior, security, landscape, and commercial lighting installs and retrofits.</p>
+          </div>
+          <div class="tile">
+            <h3>EV Chargers</h3>
+            <p>Level 2 installs, dedicated circuits, permits, and clean professional finishes.</p>
+          </div>
+          <div class="tile">
+            <h3>New Construction & Remodels</h3>
+            <p>Rough-in to final, inspections, and punch list completion.</p>
+          </div>
+          <div class="tile">
+            <h3>Commercial & Industrial</h3>
+            <p>Service calls, maintenance, equipment hookups, and safety-first support.</p>
+          </div>
+        </div>
+
+        <div class="section__bar">
+          <div class="bar">
+            <div>
+              <strong>Need emergency help?</strong>
+              <span style="color:var(--muted);font-weight:800"> We take 24/7 calls across Central Florida.</span>
+            </div>
+            <a class="btn btn--primary" href="tel:+13528884468">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="area">
+      <div class="container">
+        <div class="section__head">
+          <h2>Service Area</h2>
+          <p class="lead">Based in Umatilla, FL. Working throughout Central Florida.</p>
+        </div>
+
+        <div class="areas">
+          <div class="areas__list">
+            <strong style="display:block;margin-bottom:10px">Common areas we cover</strong>
+            <ul>
+<li>Umatilla</li>
+<li>Tavares</li>
+<li>Eustis</li>
+<li>Mount Dora</li>
+<li>Leesburg</li>
+<li>Clermont</li>
+<li>Minneola</li>
+<li>Groveland</li>
+<li>Apopka</li>
+<li>Ocoee</li>
+<li>Winter Garden</li>
+<li>Orlando</li>
+<li>Lake Buena Vista</li>
+<li>Kissimmee</li>
+<li>Sanford</li>
+<li>Altamonte Springs</li>
+<li>Lake Mary</li>
+<li>Oviedo</li>
+<li>Central Florida & surrounding areas</li>
+            </ul>
+            <div class="areas__note">If you’re not listed, call anyway. If it’s Central Florida, we likely cover it.</div>
+          </div>
+
+          <div class="map__box">
+            <h3 class="map__title">Central Florida Coverage</h3>
+            <div style="color:var(--muted);font-weight:800">
+              Google Map + Reviews will go here next. Not required to start getting calls.
+            </div>
+            <a class="btn btn--ghost btn--full" href="#contact">Request Service</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="why">
+      <div class="container">
+        <div class="section__head">
+          <h2>Why True Path</h2>
+          <p class="lead">Clean work. Clear communication. Done right the first time.</p>
+        </div>
+
+        <div class="about">
+          <div class="panel">
+            <p style="margin:0 0 12px">
+              True Path Electrical Services, LLC is a solo owner-operated electrical company built on clean work, safety, and doing things the right way.
+            </p>
+            <p style="margin:0;color:var(--muted);font-weight:800">
+              Today it’s one person focused on quality and trust. Tomorrow it can grow into a team while keeping the same standard.
+            </p>
+
+            <div class="badges">
+              <span class="badge">Licensed & Insured</span>
+              <span class="badge">Code Compliant</span>
+              <span class="badge">Residential • Commercial • Industrial</span>
+              <span class="badge">24/7 Emergency</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <strong style="display:block;margin-bottom:10px">Work Photos</strong>
+            <div class="photoGrid">
+              <img class="workImg" src="assets/work-1.jpg" alt="Electrical work photo 1" loading="lazy">
+              <img class="workImg" src="assets/work-2.jpg" alt="Electrical work photo 2" loading="lazy">
+            </div>
+            <div class="fine" style="margin-top:10px">Add more photos later and we’ll expand this grid.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <h2>FAQ</h2>
+          <p class="lead">Quick answers for the stuff customers always ask.</p>
+        </div>
+
+        <div class="grid">
+          <div class="tile">
+            <h3>Do you offer emergency service?</h3>
+            <p>Yes. Call any time. If it’s urgent, we’ll prioritize it.</p>
+          </div>
+          <div class="tile">
+            <h3>Are you licensed and insured?</h3>
+            <p>Yes. License EC13015924. We do code-compliant work.</p>
+          </div>
+          <div class="tile">
+            <h3>What areas do you cover?</h3>
+            <p>Umatilla as the base. Serving Lake, Orange, Seminole, Osceola, and surrounding Central Florida areas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contact</h2>
+          <p class="lead">Call anytime for emergencies. For quotes, send details below.</p>
+        </div>
+
+        <div class="contact">
+          <div class="panel">
+            <h3 style="margin:0 0 8px">Call or Email</h3>
+            <div style="color:var(--muted);font-weight:800">Fast response. Clear communication.</div>
+
+            <div class="contactLines">
+              <div class="contactLine"><div class="left">Phone</div><div class="right">(352) 888-4468</div></div>
+              <div class="contactLine"><div class="left">Email</div><div class="right">cody.watters@truepathfl.com</div></div>
+              <div class="contactLine"><div class="left">License</div><div class="right">EC13015924</div></div>
+            </div>
+
+            <a class="btn btn--primary btn--full" style="margin-top:14px" href="tel:+13528884468">Call Now</a>
+            <div class="fine" style="margin-top:10px">Emergency calls welcome 24/7.</div>
+          </div>
+
+          <div class="panel form">
+            <form action="#" method="post" onsubmit="event.preventDefault(); alert('Form is not wired yet. Use Call Now or email for now.');">
+              <div class="form__row">
+                <div>
+                  <label for="name">Name</label>
+                  <input id="name" name="name" placeholder="Your name" required />
+                </div>
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" placeholder="(###) ###-####" />
+                </div>
+              </div>
+
+              <label for="email">Email (optional)</label>
+              <input id="email" name="email" placeholder="you@example.com" />
+
+              <label for="type">Service Type</label>
+              <select id="type" name="type">
+                <option>Choose one</option>
+                <option>Troubleshooting</option>
+                <option>Panel upgrade</option>
+                <option>Lighting</option>
+                <option>EV charger</option>
+                <option>New construction / remodel</option>
+                <option>Commercial / industrial</option>
+              </select>
+
+              <label for="details">What do you need help with?</label>
+              <textarea id="details" name="details" rows="6" placeholder="Example: Panel upgrade, breaker tripping, EV charger install, lighting, etc."></textarea>
+
+              <button class="btn btn--primary" type="submit">Request Quote</button>
+              <div class="fine" style="margin-top:10px">We’ll wire this form to send once you choose a form service.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <img class="footer__logo" src="assets/logo.png" alt="True Path Electrical Services">
+            <div class="fine">Residential • Commercial • Industrial • 24/7 Emergency</div>
+          </div>
+          <div>
+            <strong>Service Area</strong>
+            <div class="fine" style="margin-top:8px">Central Florida. Based in Umatilla, FL.</div>
+          </div>
+          <div>
+            <strong>License</strong>
+            <div class="fine" style="margin-top:8px">EC13015924</div>
+          </div>
+        </div>
+
+        <div class="footer__bottom fine">
+          © <span id="year"></span> True Path Electrical Services, LLC. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const nav = document.getElementById('nav');
+    const navToggle = document.getElementById('navToggle');
+    navToggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Theme: query param OR localStorage
+    // index.html?theme=dark
+    // index.html?theme=light
+    const params = new URLSearchParams(window.location.search);
+    const qpTheme = params.get('theme');
+    const saved = localStorage.getItem('tp_theme');
+    const initial = (qpTheme === 'dark' || qpTheme === 'light') ? qpTheme : (saved || 'light');
+
+    document.documentElement.setAttribute('data-theme', initial);
+
+    function toggleTheme(){
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('tp_theme', next);
+    }
+
+    document.getElementById('themeBtn')?.addEventListener('click', toggleTheme);
+  </script>
+</body>
+</html>
